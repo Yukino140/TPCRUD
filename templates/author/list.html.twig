@@ -1,0 +1,11 @@
+{% if auther is not empty %}
+{% for item in auther %}
+    {{item.username |upper}}
+    <img src={{item.picture}} />
+    <button><a href="{{path('ad',{'id':item.id})}}">details</a></button>
+    <p></p>
+{% endfor %}
+nombre des autheur:{{auther|length }}
+{% else %}
+<h1>the Table is empty<h1>
+{% endif %}
