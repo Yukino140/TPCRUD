@@ -48,12 +48,13 @@ class AuthorController extends AbstractController
             ]);
     }
     /**
-     * @Route("/authorDetails/{id}",name="ad")
+     * @Route("/authorDetails/{id}/{username}",name="ad")
      */
-    public function authorDetails($id):Response
+    public function authorDetails($id,$username):Response
     {
         return $this->render("author/showAuthor.html.twig", [
-            "id"=>$id
+            "id"=>$id,
+            "user"=>$username
         ]);
     }
 }

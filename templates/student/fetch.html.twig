@@ -1,0 +1,30 @@
+<h1>La Liste des Etudiant</h1>
+
+<table border="1">
+
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Classroom</th>
+        <th>Action</th>
+    </tr>
+</thead>
+
+<tbody>
+    {% for rs in res%}
+    <tr>
+    <td>{{ rs.id }}</td>
+    <td>{{ rs.name }}</td>
+    <td>{{ rs.email }}</td>
+    <td>{{ rs.age }}</td>
+    <td>{{ rs.classroom }}</td>
+    <td>
+   <button><a href="{{path('rmv',{'id': rs.id})}}">remove</a></button>
+    <button><a href="{{path('upd',{'id':rs.id})}}">update</a></button>
+    </tr>
+    {% endfor %}
+<tbody>
+<button><a href="{{path('addf')}}">Add Student</a></button>

@@ -2,7 +2,7 @@
 {% for item in auther %}
     {{item.username |upper}}
     <img src={{item.picture}} />
-    <button><a href="{{path('ad',{'id':item.id})}}">details</a></button>
+    <button><a href="{{path('ad',{'id':item.id},{'user':item.username})}}">details</a></button>
     <p></p>
 {% endfor %}
 nombre des autheur:{{auther|length }}
